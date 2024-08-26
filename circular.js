@@ -1,3 +1,4 @@
 const circular = {
-    name: "circular"
+    circular: 'circular'
 }
+console.log(circular)
