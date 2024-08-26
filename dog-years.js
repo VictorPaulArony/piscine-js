@@ -13,6 +13,10 @@ function dogYears(planetName, seconds){
 
     const secondsinearth = 31557600
     const earthyear = seconds / secondsinearth
+    if (!orbit[planetName]){
+        return ("INVALID PLANET")
+        
+    }
 
     const planetyears  = earthyear /orbit[planetName]
     
