@@ -1,8 +1,8 @@
 const escapeStr = "\`, \\, \/, \" and \'."
 const arr = [4,'2']
-const obj = {str:"string", num: 123, bool:true, undef:"undefined"}
+const obj = {str:"string", num: 123, bool:true, undef:undefined}
 const nested = {
-    arr: [4,"undefined", '2'],
+    arr: [4, undefined, '2'],
     obj: { str:"string", num:123, bool:true }
 }
 
