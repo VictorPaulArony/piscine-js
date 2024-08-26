@@ -1,4 +1,4 @@
-const planet = ["earth", "mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune" ]
+
 function dogYears(planetName, seconds){
     const orbit = {
         earth: 1.0,
