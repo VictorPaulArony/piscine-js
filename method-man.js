@@ -16,7 +16,7 @@ function whisper(str){
 function capitalize(str){
     const s = str.split(" ")
     for (let i= 0; i< s.length;i++){
-        s[i] = s[i][0].toUpperCase() + s[i].substr(1)
+        s[i] = s[i][0].toUpperCase() + s[i].substr(1).toLowerCase()
     }
    return s.join(" ")
    
@@ -26,4 +26,4 @@ console.log(words("The quick brown fox jumped over the lazy dog"))
 console.log(sentence(["the", "quick", "brown", "fox", "jumped"]))
 console.log(yell("The quick brown fox jumped over the lazy dog"))
 console.log(whisper("The quick brown fox jumped over the lazy dog"))
-console.log(capitalize("The quick brown fox jumped over the lazy dog"))
+console.log(capitalize("STR quick brown fox jumped over the lazy dog"))
