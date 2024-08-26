@@ -1,16 +1,23 @@
 const person = {
-    name:"person",
-    age: 12,
+    name: 'person',
+    age: 10,
     country: 'US',
-}
+  }
 
 const clone1 = {...person }
-
 const clone2 = Object.assign({}, person)
-const sameperson = person
+const sameperson = {...person}
 
-person.age++
+clone1.name = 'clone1'
+clone2.name = 'clone2'
+sameperson.name = 'sameperson'
+
+
+person.age ++
+sameperson.age ++
+sameperson.country = 'FR'
  person.country = 'FR'
+
 
 console.log(person)
 console.log(clone1)
