@@ -1,7 +1,7 @@
 
 
 const clone1 = {...person }
-const clone2 = Object.assign({}, person)
+const clone2 = {...person}
 const sameperson = person
 
 
