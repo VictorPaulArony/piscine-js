@@ -9,9 +9,9 @@ function add(num, num1){
     return num + num1
 }
 function sub(num, num1){
-    return num1 - num
+    return num - num1
 }
-console.log(sub(10,20))
+console.log(sub(3,10))
 console.log(add(10,20))
 console.log(less(10))
 console.log(more(10))
