@@ -14,11 +14,12 @@ function whisper(str){
     return `*${str.toLowerCase()}*`;
 }
 function capitalize(str){
-    // const s = str.split(" ")
-    // for (let i= 0; i< s.length;i++){
-    //     s[i] = s[i][0].toUpperCase()
-    // }
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+    const s = str.split(" ")
+    for (let i= 0; i< s.length;i++){
+        s[i] = s[i][0].toUpperCase() + s[i].substr(1)
+    }
+   return s.join(" ")
+   
 }
 
 console.log(words("The quick brown fox jumped over the lazy dog"))
