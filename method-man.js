@@ -1,27 +1,28 @@
-const str = "The quick brown fox jumped over the lazy dog"
-const arr = ["the", "quick", "brown", "fox", "jumped"]
-const str1 = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG"
 
-function words(){
+function words(str){
     return str.split(' ')
 }
-function sentence(){
+function sentence(arr){
     return arr.join(' ')
 }
 
-function yell(){
+function yell(str){
     return str.toUpperCase()
 }
 
-function whisper(){
-    return str1.toLowerCase()
+function whisper(str){
+    return `*${str.toLowerCase()}*`;
 }
-function capitalize(str2){
-    return str2.charAt(0).toUpperCase() + str2.slice(1)
+function capitalize(str){
+    // const s = str.split(" ")
+    // for (let i= 0; i< s.length;i++){
+    //     s[i] = s[i][0].toUpperCase()
+    // }
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
 }
 
-console.log(words())
-console.log(sentence())
-console.log(yell())
-console.log(whisper())
-console.log(capitalize('the quick brown fox jumped over the lazy dog'))
+console.log(words("The quick brown fox jumped over the lazy dog"))
+console.log(sentence(["the", "quick", "brown", "fox", "jumped"]))
+console.log(yell("The quick brown fox jumped over the lazy dog"))
+console.log(whisper("The quick brown fox jumped over the lazy dog"))
+console.log(capitalize("The quick brown fox jumped over the lazy dog"))
