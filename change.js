@@ -17,5 +17,5 @@
   }
 
  
-  console.log(get("str"))
+  console.log(get('str'))
   console.log(set('num', 10))
