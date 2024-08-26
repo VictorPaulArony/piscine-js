@@ -1,4 +1,4 @@
-function isPostive(num){
+function isPositive(num){
     if( num > 0){
     return "true"
     }
@@ -12,5 +12,5 @@ function abs(num){
     return num * +1
 }
 
-console.log(isPostive(13))
-console.log(abs(13))
+console.log(isPositive(13))
+console.log(abs(-13))
