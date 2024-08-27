@@ -1,4 +1,4 @@
-const is = {
+/*const is = {
     num: (value) => typeof value === 'number',
     nan: (value) => Number.isNaN(value),
     str: (value) => typeof value === 'string',
@@ -11,7 +11,7 @@ const is = {
     truthy: (value) => !!value === true,
     falsy: (value) => !!value === false
 
-}
+}*/
 
 console.log(is.num(42)); // true
 console.log(is.nan(NaN)); // true
