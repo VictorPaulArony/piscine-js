@@ -1,17 +1,43 @@
-/*const is = {
-    num: (value) => typeof value === 'number',
-    nan: (value) => Number.isNaN(value),
-    str: (value) => typeof value === 'string',
-    bool: (value) => typeof value === 'boolean',
-    undef: (value) => typeof value === 'undefined',
-    def: (value) => typeof value !== 'undefined',
-    arr: (value) => Array.isArray(value),
-    obj: (value) => value !== null && typeof value === 'object',
-    fun: (value) => typeof value === 'function',
-    truthy: (value) => !!value === true,
-    falsy: (value) => !!value === false
+// const is = {}
 
-}*/
+    is.num = function (value) {
+        return typeof value === 'number'
+    }
+
+    is.nan = function (value){
+        return  Number.isNaN(value)
+    }
+
+    is.str = function (value){
+        return  typeof value === 'string'
+    }
+
+    is.bool= function (value) {
+        return typeof value === 'boolean'
+    }
+    is.undef= function (value) {
+        return typeof value === 'undefined'
+    }
+    is.def= function (value) {
+        return typeof value !== 'undefined'
+    }
+    is.arr= function (value) {
+        return Array.isArray(value)
+    }
+    is.obj= function (value) {
+        return  value !== null && typeof value === 'object'
+    }
+    is.fun= function (value) {
+        return typeof value === 'function'
+    }
+    is.truthy= function (value) {
+        return !!value === true
+    }
+    is.falsy= function (value) {
+        return !!value === false
+    }
+
+
 
 console.log(is.num(42)); // true
 console.log(is.nan(NaN)); // true
