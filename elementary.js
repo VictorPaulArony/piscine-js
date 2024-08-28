@@ -2,8 +2,17 @@
 // const b = 0
 function multiply(a,b){
     let res = 0
+
+    let check = b< 0
+        b = Math.abs(b)
+    
+
     for (let i = 0;i< b; i++){
         res += a
+    }
+
+    if (check){
+        res = -res
     }
     return res
 }
@@ -11,6 +20,7 @@ function didide(a,b){
     if (a<0){
         throw new RangeError('number is negative')
     }
+
     let res = 0
    while (a >= b){
     a -= b 
@@ -26,6 +36,6 @@ function modulo(a,b){
 }
 
 
-// console.log(multiply(123,0))
+ //console.log(multiply(123,-22))
 // console.log(didide())
 // console.log(modulo())
