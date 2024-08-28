@@ -25,7 +25,7 @@ const is = {}
         return Array.isArray(value)
     }
     is.obj= function (value) {
-        return  value !== null && typeof value === 'object'
+        return  value !== null && typeof value === 'object' && !Array.isArray(value)
     }
     is.fun= function (value) {
         return typeof value === 'function'
