@@ -1,5 +1,4 @@
 function indexOf(arr, val, from = 0) {
-    //return arr.indexOf(val)
     
     for (let i = from; i < arr.length; i++){
         if (arr[i] === val){
@@ -29,6 +28,6 @@ function includes(arr, val){
     return false
 }
 //let t = 'test'
-console.log(indexOf([t, 0, 0, t], t, 1))
-console.log(lastIndexOf([1, 2, 3, 4, 5, 6]))
-console.log(includes([1, 2, 3, 4, 5], 3))
+// console.log(indexOf([t, 0, 0, t], t, 1))
+// console.log(lastIndexOf([1, 2, 3, 4, 5, 6]))
+// console.log(includes([1, 2, 3, 4, 5], 3))
