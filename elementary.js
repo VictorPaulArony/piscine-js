@@ -24,11 +24,17 @@ function divide(a,b){
     let check = b< 0 
     b = Math.abs(b)
 
+  
+
     let res = 0
    while (a >= b){
     a -= b 
     res ++
    }
+
+   if (check){
+    res = -res
+}
    return res
 }
 function modulo(a,b){
@@ -40,5 +46,5 @@ function modulo(a,b){
 
 
  //console.log(multiply(123,-22))
-console.log(divide(34,-78))
+console.log(divide(123,-22))
 // console.log(modulo())
