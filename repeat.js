@@ -9,4 +9,4 @@ function repeat(str, num){
     return res
 }
 
-console.log(repeat("hello", -1))
+console.log(repeat("hello", 10))
