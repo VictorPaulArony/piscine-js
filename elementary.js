@@ -47,10 +47,11 @@ function modulo(a,b){
     while (a >= b){
         a -= b
     }
-    return check ? -a : a
+    return check ? +a : a
+    
 }
 
 
  console.log(multiply(123,-22))
 console.log(divide(22,22))
-console.log(modulo(200,20))
+console.log(modulo(123,-22))
