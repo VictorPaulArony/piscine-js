@@ -1,4 +1,4 @@
-//const str = 'victor paul'
+//const str = 'abcdef'
 function cutFirst(str){
     let res = ''
     for (let i = 2; i < str.length;i++){
@@ -31,7 +31,7 @@ function keepFirst(str){
     return res
 }
 
-function keeoLast(str){
+function keepLast(str){
     let res = ''
     for (let i = str.length-2; i < str.length; i++){
         res += str[i]
@@ -59,5 +59,5 @@ function keeoLast(str){
 // console.log(cutLast(str))
 // console.log(cutFirstLast(str))
 // console.log(keepFirst(str))
-// console.log(keeoLast(str))
+ //console.log(keepLast(str))
 // console.log(keepFirstLast(str))
