@@ -1,6 +1,6 @@
-const a = 10
-const b = 30
-function multipy(){
+const a = 34
+const b = 78
+function multiply(){
     let res = 0
     for (let i = 0;i< b; i++){
         res += a
@@ -23,6 +23,6 @@ function modulo(){
 }
 
 
-console.log(multipy())
+console.log(multiply())
 console.log(didide())
 console.log(modulo())
