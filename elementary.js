@@ -1,13 +1,13 @@
-const a = 34
-const b = 78
-function multiply(){
+// const a = 123
+// const b = 0
+function multiply(a,b){
     let res = 0
     for (let i = 0;i< b; i++){
         res += a
     }
     return res
 }
-function didide(){
+function didide(a,b){
     if (a<0){
         throw new RangeError('number is negative')
     }
@@ -18,7 +18,7 @@ function didide(){
    }
    return res
 }
-function modulo(){
+function modulo(a,b){
     while (a >= b){
         a -= b
     }
@@ -26,6 +26,6 @@ function modulo(){
 }
 
 
-console.log(multiply())
-console.log(didide())
-console.log(modulo())
+// console.log(multiply(123,0))
+// console.log(didide())
+// console.log(modulo())
