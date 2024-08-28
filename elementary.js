@@ -7,8 +7,12 @@ function multiply(a,b){
         b = Math.abs(b)
     
 
-    for (let i = 0;i< b; i++){
+    // for (let i = 0;i< b; i++){
+    //     res += a
+    // }
+    while (b>0){
         res += a
+        b--
     }
 
     if (check){
