@@ -1,7 +1,7 @@
 const is = {}
 
     is.num = function (value) {
-        return typeof value === 'number' && !isNaN(value)
+        return typeof value === 'number' 
     }
 
     is.nan = function (value){
@@ -39,7 +39,7 @@ const is = {}
 
 
 
-console.log(is.num(42)); // true
+console.log(is.num(NaN)); // true
 console.log(is.nan(NaN)); // true
 console.log(is.str("1234"))//true
 console.log(is.bool(true)) //true
