@@ -28,7 +28,7 @@ function includes(arr, val){
     }
     return false
 }
-let t = 'test'
+//let t = 'test'
 console.log(indexOf([t, 0, 0, t], t, 1))
 console.log(lastIndexOf([1, 2, 3, 4, 5, 6]))
 console.log(includes([1, 2, 3, 4, 5], 3))
