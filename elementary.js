@@ -21,12 +21,13 @@ function divide(a,b){
         throw new RangeError('Division by zero')
     }
 
-    let check = (a< 0) !== (b<0)
+    const check = (a< 0) !== (b<0)
     b = Math.abs(b)
     a = Math.abs(a)
 
-    check = a< 0 
+    
     a = Math.abs(a)
+    b = Math.abs(b)
   
 
     let res = 0
@@ -47,5 +48,5 @@ function modulo(a,b){
 
 
  //console.log(multiply(123,-22))
-//console.log(divide(123,-22))
+console.log(divide(123,-22))
 // console.log(modulo())
