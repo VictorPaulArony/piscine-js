@@ -1,10 +1,7 @@
 // Custom round function that mimics Math.round()
 function round(num) {
-    // Separate the integer and decimal parts manually
-    const integerPart = num >= 0 ? ~~num : -~~-num; // Integer part without conversion functions
-    const decimalPart = num - integerPart; // Find the fractional part
-    
-    // Round based on the value of the fractional part
+    const integerPart = num >= 0 ? num - (num % 1) : num - (num % 1); // Extract integer part
+    const decimalPart = num - integerPart; // Extract fractional part
     if (num >= 0) {
       return decimalPart >= 0.5 ? integerPart + 1 : integerPart;
     } else {
@@ -14,22 +11,19 @@ function round(num) {
   
   // Custom ceil function that mimics Math.ceil()
   function ceil(num) {
-    const integerPart = num >= 0 ? ~~num : -~~-num;
-    // Add 1 only if there's a positive fractional part
+    const integerPart = num - (num % 1); // Extract integer part
     return num > integerPart ? integerPart + 1 : integerPart;
   }
   
   // Custom floor function that mimics Math.floor()
   function floor(num) {
-    const integerPart = num >= 0 ? ~~num : -~~-num;
-    // Subtract 1 only if there's a negative fractional part
+    const integerPart = num - (num % 1); // Extract integer part
     return num < integerPart ? integerPart - 1 : integerPart;
   }
   
   // Custom trunc function that mimics Math.trunc()
   function trunc(num) {
-    // Simply keep the integer part based on the sign
-    return num >= 0 ? ~~num : -~~-num;
+    return num >= 0 ? num - (num % 1) : num - (num % 1); // Simply return the integer part
   }
   
   // Testing the functions with the provided input
