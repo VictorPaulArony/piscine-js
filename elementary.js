@@ -8,6 +8,9 @@ function multiply(){
     return res
 }
 function didide(){
+    if (a<0){
+        throw new RangeError('number is negative')
+    }
     let res = 0
    while (a >= b){
     a -= b 
