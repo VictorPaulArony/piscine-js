@@ -15,6 +15,7 @@ function lastIndexOf(arr, val, from = arr.length-1){
            return i
         }
     }
+    return -1
 }
 
 function includes(arr, val){
@@ -27,6 +28,7 @@ function includes(arr, val){
     return false
 }
 //let t = 'test'
+//let bigArray = [1, 2, { key: 'value' }, 4];
 // console.log(indexOf([t, 0, 0, t], t, 1))
-//console.log(lastIndexOf([t, 0, 0, t], t, 2))
+//console.log(lastIndexOf(bigArray, {}))
 // console.log(includes([1, 2, 3, 4, 5], 3))
