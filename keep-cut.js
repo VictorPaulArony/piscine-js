@@ -1,4 +1,4 @@
-//const str = 'abcdef'
+//const str = 'a'
 function cutFirst(str){
     let res = ''
     for (let i = 2; i < str.length;i++){
@@ -33,9 +33,7 @@ function keepFirst(str){
 
 function keepLast(str){
     let res = ''
-    for (let i = str.length-2; i < str.length; i++){
-        res += str[i]
-    }
+    res = str.slice(-2)
     return res
 }
  function keepFirstLast(str){
@@ -46,9 +44,7 @@ function keepLast(str){
         res1 += str[i]
     }
 
-    for (let i = str.length-2; i < str.length; i++){
-        res2 += str[i]
-    }
+   res2 = str.slice(-2)
     return res1.concat('', res2)
 
  }
@@ -60,4 +56,4 @@ function keepLast(str){
 // console.log(cutFirstLast(str))
 // console.log(keepFirst(str))
  //console.log(keepLast(str))
-// console.log(keepFirstLast(str))
+//console.log(keepFirstLast(str))
