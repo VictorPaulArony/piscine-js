@@ -28,5 +28,5 @@ function includes(arr, val){
 }
 //let t = 'test'
 // console.log(indexOf([t, 0, 0, t], t, 1))
-c//onsole.log(lastIndexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
+//console.log(lastIndexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
 // console.log(includes([1, 2, 3, 4, 5], 3))
