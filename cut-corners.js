@@ -28,16 +28,15 @@ function round(num) {
   
   // Efficient helper function to extract the integer part of a positive number without %
   function getIntegerPart(num) {
-    let intPart = 0;
-    while (intPart <= num) {
-      if (intPart + 1 > num) break; // Stop before exceeding the number
-      intPart++;
+    let result = num;
+    while (result >= 1) {
+      result -= 1; // Subtract 1 until the number is less than 1
     }
-    return intPart;
+    return num - result; // Subtract the leftover fraction from the original number
   }
   
   // Testing the functions with the provided input
-//   const nums = [3.7, -3.7, 3.1, -0.1];
+//   const nums = [3.7, -3.7, 3.1, -3.1];
 //   console.log(nums.map(round)); // Output: [ 4, -4, 3, -3 ]
 //   console.log(nums.map(floor)); // Output: [ 3, -4, 3, -4 ]
 //   console.log(nums.map(trunc)); // Output: [ 3, -3, 3, -3 ]
