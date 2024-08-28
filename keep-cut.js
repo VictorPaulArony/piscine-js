@@ -1,4 +1,4 @@
-//const str = 'abcdef'
+// const str = 'ab'
 function cutFirst(str){
     let res = ''
     for (let i = 2; i < str.length;i++){
@@ -39,6 +39,10 @@ function keepLast(str){
  function keepFirstLast(str){
     let res1 = ''
     let res2 = ''
+
+    if (str.length <= 2){
+        return str
+    }
 
    res1 = str.slice(0,2)
 
