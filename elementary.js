@@ -24,10 +24,6 @@ function divide(a,b){
     const check = (a< 0) !== (b<0)
     b = Math.abs(b)
     a = Math.abs(a)
-
-    
-    a = Math.abs(a)
-    b = Math.abs(b)
   
 
     let res = 0
@@ -36,7 +32,6 @@ function divide(a,b){
     res ++
    }
 
-  
    return check ? -res : res
 }
 function modulo(a,b){
@@ -47,6 +42,6 @@ function modulo(a,b){
 }
 
 
- //console.log(multiply(123,-22))
-console.log(divide(123,-22))
-// console.log(modulo())
+ console.log(multiply(123,-22))
+console.log(divide(22,22))
+console.log(modulo(200,20))
