@@ -1,13 +1,25 @@
 const a = 10
 const b = 30
 function multipy(){
-    return a* b
+    let res = 0
+    for (let i = 0;i< b; i++){
+        res += a
+    }
+    return res
 }
 function didide(){
-    return a/b
+    let res = 0
+   while (a >= b){
+    a -= b 
+    res ++
+   }
+   return res
 }
 function modulo(){
-    return a%b
+    while (a >= b){
+        a -= b
+    }
+    return a
 }
 
 
