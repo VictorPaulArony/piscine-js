@@ -26,19 +26,20 @@ function round(num) {
     return num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num); // Simply return the integer part
   }
   
-  // Helper function to extract the integer part of a positive number without using %
+  // Efficient helper function to extract the integer part of a positive number without %
   function getIntegerPart(num) {
     let intPart = 0;
-    while (intPart + 1 <= num) {
-      intPart += 1;
+    while (intPart <= num) {
+      if (intPart + 1 > num) break; // Stop before exceeding the number
+      intPart++;
     }
     return intPart;
   }
   
   // Testing the functions with the provided input
-//   const nums = [3.7, -3.7, 3.1, -0.1];
-//   console.log(nums.map(round)); // Output: [ 4, -4, 3, -3 ]
-//   console.log(nums.map(floor)); // Output: [ 3, -4, 3, -4 ]
-//   console.log(nums.map(trunc)); // Output: [ 3, -3, 3, -3 ]
-//   console.log(nums.map(ceil));  // Output: [ 4, -3, 4, -3 ]
+  const nums = [3.7, -3.7, 3.1, -0.1];
+  console.log(nums.map(round)); // Output: [ 4, -4, 3, -3 ]
+  console.log(nums.map(floor)); // Output: [ 3, -4, 3, -4 ]
+  console.log(nums.map(trunc)); // Output: [ 3, -3, 3, -3 ]
+  console.log(nums.map(ceil));  // Output: [ 4, -3, 4, -3 ]
   
