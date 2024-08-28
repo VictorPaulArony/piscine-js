@@ -1,4 +1,4 @@
-//const str = 'a'
+//const str = 'af'
 function cutFirst(str){
     let res = ''
     for (let i = 2; i < str.length;i++){
@@ -40,9 +40,7 @@ function keepLast(str){
     let res1 = ''
     let res2 = ''
 
-    for (let i = 0;i< 2 && i < str.length; i++){
-        res1 += str[i]
-    }
+   res1 = str.slice(2)
 
    res2 = str.slice(-2)
     return res1.concat('', res2)
