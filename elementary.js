@@ -17,27 +17,26 @@ function multiply(a,b){
     return res
 }
 function divide(a,b){
-    // if (a<0){
-    //     throw new RangeError('number is negative')
-    // }
+    if ((a===0) || (b===0)){
+        throw new RangeError('Division by zero')
+    }
 
-    let check = b< 0 
+    let check = (a< 0) !== (b<0)
     b = Math.abs(b)
+    a = Math.abs(a)
 
     check = a< 0 
     a = Math.abs(a)
   
 
     let res = 0
-   while (a >= b){
+   while ( a >= b){
     a -= b 
     res ++
    }
 
-   if (check){
-    res = -res
-}
-   return res
+  
+   return check ? -res : res
 }
 function modulo(a,b){
     while (a >= b){
@@ -48,5 +47,5 @@ function modulo(a,b){
 
 
  //console.log(multiply(123,-22))
-console.log(divide(-123,22))
+console.log(divide(123,-22))
 // console.log(modulo())
