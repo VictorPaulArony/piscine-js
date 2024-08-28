@@ -16,10 +16,13 @@ function multiply(a,b){
     }
     return res
 }
-function didide(a,b){
+function divide(a,b){
     if (a<0){
         throw new RangeError('number is negative')
     }
+
+    let check = b< 0 
+    b = Math.abs(b)
 
     let res = 0
    while (a >= b){
@@ -37,5 +40,5 @@ function modulo(a,b){
 
 
  //console.log(multiply(123,-22))
-// console.log(didide())
+console.log(divide(34,-78))
 // console.log(modulo())
