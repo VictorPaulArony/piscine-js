@@ -1,4 +1,4 @@
-// const arr = 'abcdef'
+const arr = 'abcdef'
 
 function slice(str, start, end) {
     let res = Array.isArray(str) ? [] : ''
@@ -10,6 +10,9 @@ function slice(str, start, end) {
     if (end === undefined) {
         end = str.length
     }
+    if (end < 0) {
+        end = str.length + end;
+      }
 
     for (let i = start; i < end && i < str.length; i++) {
         if (Array.isArray(str)) {
@@ -22,4 +25,4 @@ function slice(str, start, end) {
     return res
 }
 
-// console.log(slice(arr, -2))
+console.log(slice(arr, 0,-2))
