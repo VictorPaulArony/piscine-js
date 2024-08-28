@@ -8,9 +8,9 @@ function indexOf(arr, val, from = 0) {
     return -1
 }
 
-function lastIndexOf(arr, val){
+function lastIndexOf(arr, val, from = arr.length-1){
 
-    for (let i = arr.length-1;i >= 0; i--){
+    for (let i = from;i >= 0; i--){
         if (arr[i] === val) {
            return i
         }
@@ -28,5 +28,5 @@ function includes(arr, val){
 }
 //let t = 'test'
 // console.log(indexOf([t, 0, 0, t], t, 1))
-//console.log(lastIndexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
+//console.log(lastIndexOf([t, 0, 0, t], t, 2))
 // console.log(includes([1, 2, 3, 4, 5], 3))
