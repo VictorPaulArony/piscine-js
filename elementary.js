@@ -40,18 +40,18 @@ function modulo(a,b){
     if (a===0) {
         throw new RangeError('Division by zero')
     }
-    const check = (a< 0) !== (b<0)
+    const check = (a< 0) 
     b = Math.abs(b)
     a = Math.abs(a)
 
     while (a >= b){
         a -= b
     }
-    return check ? +a : a
+    return check ? -a : a
     
 }
 
 
  console.log(multiply(123,-22))
 console.log(divide(22,22))
-console.log(modulo(123,-22))
+console.log(modulo(-123,22))
