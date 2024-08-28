@@ -1,7 +1,7 @@
-// const is = {}
+const is = {}
 
     is.num = function (value) {
-        return typeof value === 'number'
+        return typeof value === 'number' && !isNaN(value)
     }
 
     is.nan = function (value){
@@ -31,10 +31,10 @@
         return typeof value === 'function'
     }
     is.truthy= function (value) {
-        return !!value === true
+        return !!value 
     }
     is.falsy= function (value) {
-        return !!value === false
+        return !value 
     }
 
 
