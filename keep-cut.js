@@ -1,4 +1,4 @@
-// const str = 'ab'
+//  const str = 'abc'
 function cutFirst(str){
     let res = ''
     for (let i = 2; i < str.length;i++){
@@ -40,7 +40,7 @@ function keepLast(str){
     let res1 = ''
     let res2 = ''
 
-    if (str.length <= 2){
+    if (str.length <= 4){
         return str
     }
 
@@ -58,4 +58,4 @@ function keepLast(str){
 // console.log(cutFirstLast(str))
 // console.log(keepFirst(str))
  //console.log(keepLast(str))
-//console.log(keepFirstLast(str))
+// console.log(keepFirstLast(str))
