@@ -57,9 +57,9 @@ function round(num) {
  
   
   
-  const nums =  [3, -3, 3, -3, 0];
-  console.log(nums.map(round)); // Expected: [3, -3, 3, -3, 0]
-  console.log(nums.map(floor)); // Expected: [3, -4, 2, -3, 0]
-  console.log(nums.map(trunc)); // Expected: [3, -3, 2, -2, 0]
-  console.log(nums.map(ceil));  // Expected: [4, -3, 3, -2, 0]
+  // const nums =  [3, -3, 3, -3, 0];
+  // console.log(nums.map(round)); // Expected: [3, -3, 3, -3, 0]
+  // console.log(nums.map(floor)); // Expected: [3, -4, 2, -3, 0]
+  // console.log(nums.map(trunc)); // Expected: [3, -3, 2, -2, 0]
+  // console.log(nums.map(ceil));  // Expected: [4, -3, 3, -2, 0]
   
