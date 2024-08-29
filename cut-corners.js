@@ -18,14 +18,8 @@ function round(num) {
   }
   
   function floor(num) {
-    if (num >= 0) {
       const integerPart = getIntegerPart(num);
-      return integerPart;
-    } else {
-      const integerPart = getIntegerPart(-num);
-      // Always round down for negatives
-      return -integerPart - (num < -integerPart ? 1 : 0);
-    }
+      return num < integerPart ? integerPart - 1 : integerPart;
   }
   
   function trunc(num) {
