@@ -3,7 +3,7 @@ function round(num) {
       const integerPart = getIntegerPart(num)
       const decimalPart = num - integerPart
       if (Math.abs(decimalPart) >= 0.5) {
-        return integerPart + (num >= 0 ? 0 : -1)
+        return integerPart + (num >= 0 ? 1 : -1)
       }
     return integerPart
   }
