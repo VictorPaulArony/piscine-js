@@ -1,39 +1,41 @@
-// Custom round function that mimics Math.round()
+
 function round(num) {
-    const integerPart = num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num); // Extract integer part
-    const decimalPart = num - integerPart; // Calculate decimal part manually
+    const integerPart = num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num)
+    const decimalPart = num - integerPart
     if (num >= 0) {
-      return decimalPart >= 0.5 ? integerPart + 1 : integerPart;
+      return decimalPart >= 0.5 ? integerPart + 1 : integerPart
     } else {
-      return decimalPart <= -0.5 ? integerPart - 1 : integerPart;
+      return decimalPart <= -0.5 ? integerPart - 1 : integerPart
     }
   }
   
-  // Custom ceil function that mimics Math.ceil()
+  
+  
   function ceil(num) {
-    const integerPart = num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num); // Extract integer part
-    return num > integerPart ? integerPart + 1 : integerPart;
+    const integerPart = num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num)
+    return num > integerPart ? integerPart + 1 : integerPart
   }
   
-  // Custom floor function that mimics Math.floor()
+ 
   function floor(num) {
-    const integerPart = num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num); // Extract integer part
+    const integerPart = num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num)
     return num < integerPart ? integerPart - 1 : integerPart;
   }
   
-  // Custom trunc function that mimics Math.trunc()
+  
+  
   function trunc(num) {
-    return num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num); // Simply return the integer part
+    return num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num)
   }
   
-  // Efficient helper function to extract the integer part of a positive number without %
+  
   function getIntegerPart(num) {
     let result = num;
     while (result >= 1) {
       result -= 1;
-      result-- // Subtract 1 until the number is less than 1
+      result-- 
     }
-    return num - result; // Subtract the leftover fraction from the original number
+    return num - result
   }
   
   // Testing the functions with the provided input
