@@ -65,9 +65,9 @@ function round(num) {
   }
   
   // Testing the functions with the provided input
-  const nums = [-3, -3.7, 3.1, -3.1, 0.5];
-  console.log(nums.map(round)); // Expected Output: [3, -3, 3, -3, 0]
-  console.log(nums.map(floor)); // Expected Output: [ 3, -4, 3, -4 ]
-  console.log(nums.map(trunc)); // Expected Output: [ 3, -3, 3, -3 ]
-  console.log(nums.map(ceil));  // Expected Output: [ 4, -3, 4, -3 ]
+//   const nums = [-3, -3.7, 3.1, -3.1, 0.5];
+//   console.log(nums.map(round)); // Expected Output: [3, -3, 3, -3, 0]
+//   console.log(nums.map(floor)); // Expected Output: [ 3, -4, 3, -4 ]
+//   console.log(nums.map(trunc)); // Expected Output: [ 3, -3, 3, -3 ]
+//   console.log(nums.map(ceil));  // Expected Output: [ 4, -3, 4, -3 ]
   
