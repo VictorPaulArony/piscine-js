@@ -30,15 +30,16 @@ function round(num) {
   function getIntegerPart(num) {
     let result = num;
     while (result >= 1) {
-      result -= 1; // Subtract 1 until the number is less than 1
+      result -= 1;
+      result-- // Subtract 1 until the number is less than 1
     }
     return num - result; // Subtract the leftover fraction from the original number
   }
   
   // Testing the functions with the provided input
-//   const nums = [3.7, -3.7, 3.1, -3.1];
-//   console.log(nums.map(round)); // Output: [ 4, -4, 3, -3 ]
-//   console.log(nums.map(floor)); // Output: [ 3, -4, 3, -4 ]
-//   console.log(nums.map(trunc)); // Output: [ 3, -3, 3, -3 ]
-//   console.log(nums.map(ceil));  // Output: [ 4, -3, 4, -3 ]
+  const nums = [3.7, -3.7, 3.1, -3.1];
+  console.log(nums.map(round)); // Output: [ 4, -4, 3, -3 ]
+  console.log(nums.map(floor)); // Output: [ 3, -4, 3, -4 ]
+  console.log(nums.map(trunc)); // Output: [ 3, -3, 3, -3 ]
+  console.log(nums.map(ceil));  // Output: [ 4, -3, 4, -3 ]
   
