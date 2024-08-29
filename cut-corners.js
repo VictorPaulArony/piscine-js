@@ -30,7 +30,8 @@ function round(num) {
   function getIntegerPart(num) {
     let result = num;
     while (result >= 1) {
-      result -= 1; // Subtract 1 until the number is less than 1
+      result -= 1
+      result--
     }
     return num - result; // Subtract the leftover fraction from the original number
   }
