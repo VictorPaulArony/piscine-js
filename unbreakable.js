@@ -6,19 +6,19 @@ function split(str, sep) {
   
     while (i < str.length) {
       // Check if the substring matches the delimiter
-      if (str.slice(i, i + sep.length) === sep) {
-        res.push(word); // Push the accumulated word to result
-        word = ''; // Reset word
+      if (str.slice(i, i + sep.length) === sep && sep.length > 0) {
+        res.push(word); // Push the accumulated word to the result array
+        word = '';      // Reset the word accumulator
         i += sep.length; // Skip over the length of the delimiter
       } else {
-        word += str[i]; // Accumulate characters
+        word += str[i]; // Accumulate characters into word
         i++;
       }
     }
   
     // Push the last accumulated word, including trailing empty strings
     res.push(word);
-    
+  
     return res;
   }
   
