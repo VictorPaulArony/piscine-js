@@ -1,4 +1,4 @@
-
+// Custom round function that behaves like Math.round()
 function round(num) {
     if (num >= 0) {
       const integerPart = getIntegerPart(num);
@@ -8,11 +8,12 @@ function round(num) {
     } else {
       const integerPart = getIntegerPart(-num);
       const decimalPart = -num - integerPart;
-      // Round down if decimal part is -0.5 or less, otherwise round up
+      // For negative numbers, adjust rounding correctly
       return decimalPart <= -0.5 ? -integerPart - 1 : -integerPart;
     }
   }
   
+  // Custom ceil function that behaves like Math.ceil()
   function ceil(num) {
     if (num >= 0) {
       const integerPart = getIntegerPart(num);
@@ -23,6 +24,7 @@ function round(num) {
     }
   }
   
+  // Custom floor function that behaves like Math.floor()
   function floor(num) {
     if (num >= 0) {
       const integerPart = getIntegerPart(num);
@@ -34,10 +36,12 @@ function round(num) {
     }
   }
   
+  // Custom trunc function that behaves like Math.trunc()
   function trunc(num) {
     return num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num);
   }
   
+  // Helper function to get the integer part of a number without conversion
   function getIntegerPart(num) {
     let intPart = 0;
     while (intPart <= num) {
@@ -46,12 +50,10 @@ function round(num) {
     return intPart - 1;
   }
   
- 
-  
-  
+  // Testing the functions with the provided input
 //   const nums = [Math.PI, -Math.PI, Math.E, -Math.E, 0];
-//   console.log(nums.map(round)); // Expected: [3, -3, 3, -3, 0]
-//   console.log(nums.map(floor)); // Expected: [3, -4, 2, -3, 0]
-//   console.log(nums.map(trunc)); // Expected: [3, -3, 2, -2, 0]
-//   console.log(nums.map(ceil));  // Expected: [4, -3, 3, -2, 0]
+//   console.log(nums.map(round)); // Expected Output: [3, -3, 3, -3, 0]
+//   console.log(nums.map(floor)); // Expected Output: [3, -4, 2, -3, 0]
+//   console.log(nums.map(trunc)); // Expected Output: [3, -3, 2, -2, 0]
+//   console.log(nums.map(ceil));  // Expected Output: [4, -3, 3, -2, 0]
   
