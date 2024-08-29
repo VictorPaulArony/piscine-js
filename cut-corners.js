@@ -1,22 +1,20 @@
 
 function round(num) {
     if (num >= 0) {
-      const integerPart = getIntegerPart(num);
-      const decimalPart = num - integerPart;
-      // Round up if decimal part is 0.5 or more, otherwise round down
+      const integerPart = getIntegerPart(num)
+      const decimalPart = num - integerPart
       return decimalPart >= 0.5 ? integerPart + 1 : integerPart;
     } else {
       const integerPart = getIntegerPart(-num);
       const decimalPart = -num - integerPart;
       // Round down if decimal part is -0.5 or less, otherwise round up
-      return decimalPart <= -1 ? -integerPart - 1 : -integerPart;
+      return decimalPart <= -0.5 ? -integerPart - 2 : -integerPart;
     }
   }
   
   function ceil(num) {
     if (num >= 0) {
-      const integerPart = getIntegerPart(num);
-      // Round up if there's any decimal part
+      const integerPart = getIntegerPart(num)
       return num > integerPart ? integerPart + 1 : integerPart;
     } else {
       return -getIntegerPart(-num);
@@ -39,19 +37,29 @@ function round(num) {
   }
   
   function getIntegerPart(num) {
-    let intPart = 0;
-    while (intPart <= num) {
-      intPart++;
+    let sign = num >= 0 ? 1 : -1
+    num = Math.abs(num)
+    var res = 0
+    var pla = 1
+    while(pla <= num){
+        pla *= 10
     }
-    return intPart - 1;
+    pla /= 10
+    while(pla >= 1){
+       while(res + pla <= num){
+        res += pla
+       }
+       pla /= 10
+    }
+    return res * sign
   }
   
  
   
   
-//   const nums =  [3, -3, 3, -3, 0];
-//   console.log(nums.map(round)); // Expected: [3, -3, 3, -3, 0]
-//   console.log(nums.map(floor)); // Expected: [3, -4, 2, -3, 0]
-//   console.log(nums.map(trunc)); // Expected: [3, -3, 2, -2, 0]
-//   console.log(nums.map(ceil));  // Expected: [4, -3, 3, -2, 0]
+  const nums =  [3, -3, 3, -3, 0];
+  console.log(nums.map(round)); // Expected: [3, -3, 3, -3, 0]
+  console.log(nums.map(floor)); // Expected: [3, -4, 2, -3, 0]
+  console.log(nums.map(trunc)); // Expected: [3, -3, 2, -2, 0]
+  console.log(nums.map(ceil));  // Expected: [4, -3, 3, -2, 0]
   
