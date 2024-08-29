@@ -3,10 +3,6 @@ function round(num) {
     const integerPart = num >= 0 ? getIntegerPart(num) : -getIntegerPart(-num); // Extract integer part
     const decimalPart = num - integerPart; // Calculate the decimal part manually
   
-    // Round half to even: rounds .5 towards the nearest even integer
-    if (Math.abs(decimalPart) === 0.5) {
-      return integerPart % 2 === 0 ? integerPart : integerPart + (num > 0 ? 1 : -1);
-    }
     if (num >= 0) {
       return decimalPart >= 0.5 ? integerPart + 1 : integerPart;
     } else {
