@@ -3,12 +3,31 @@ function round(num) {
     if (num >= 0) {
       const integerPart = getIntegerPart(num);
       const decimalPart = num - integerPart;
-      return decimalPart >= 0.5 ? integerPart + 1 : integerPart;
+      if (decimalPart > 0.5) {
+        return integerPart + 1;
+      } else if (decimalPart < 0.5) {
+        return integerPart;
+      } else { // decimalPart === 0.5
+        // Check if integerPart is even or odd
+        return isEven(integerPart) ? integerPart : integerPart + 1;
+      }
     } else {
       const integerPart = getIntegerPart(-num);
       const decimalPart = -num - integerPart;
-      return decimalPart <= -0.5 ? -integerPart - 1 : -integerPart;
+      if (decimalPart < -0.5) {
+        return -integerPart - 1;
+      } else if (decimalPart > -0.5) {
+        return -integerPart;
+      } else { // decimalPart === -0.5
+        // Check if integerPart is even or odd
+        return isEven(integerPart) ? -integerPart : -integerPart - 1;
+      }
     }
+  }
+  
+  // Helper function to determine if a number is even
+  function isEven(num) {
+    return num - 2 * Math.floor(num / 2) === 0;
   }
   
   // Custom ceil function that mimics Math.ceil()
@@ -17,8 +36,7 @@ function round(num) {
       const integerPart = getIntegerPart(num);
       return num > integerPart ? integerPart + 1 : integerPart;
     } else {
-      const integerPart = getIntegerPart(-num);
-      return -integerPart - 1;
+      return -getIntegerPart(-num) - 1;
     }
   }
   
@@ -28,8 +46,7 @@ function round(num) {
       const integerPart = getIntegerPart(num);
       return num < integerPart ? integerPart - 1 : integerPart;
     } else {
-      const integerPart = getIntegerPart(-num);
-      return -integerPart;
+      return -getIntegerPart(-num);
     }
   }
   
@@ -48,9 +65,9 @@ function round(num) {
   }
   
   // Testing the functions with the provided input
-// onst nums = [3, -3, 3, -3, 0];
-//   console.log(nums.map(round)); // Expected Output: [ 4, -4, 3, -3 ]
-//   console.log(nums.map(floor)); // Expected Output: [ 3, -4, 3, -4 ]
-//   console.log(nums.map(trunc)); // Expected Output: [ 3, -3, 3, -3 ]
-//   console.log(nums.map(ceil));  // Expected Output: [ 4, -3, 4, -3 ]  c
+  const nums = [-3, -3.7, 3.1, -3.1, 0.5];
+  console.log(nums.map(round)); // Expected Output: [3, -3, 3, -3, 0]
+  console.log(nums.map(floor)); // Expected Output: [ 3, -4, 3, -4 ]
+  console.log(nums.map(trunc)); // Expected Output: [ 3, -3, 3, -3 ]
+  console.log(nums.map(ceil));  // Expected Output: [ 4, -3, 4, -3 ]
   
