@@ -1,15 +1,11 @@
 
 function round(num) {
-    if (num >= 0) {
       const integerPart = getIntegerPart(num)
       const decimalPart = num - integerPart
-      return decimalPart >= 0.5 ? integerPart + 1 : integerPart;
-    } else {
-      const integerPart = getIntegerPart(-num);
-      const decimalPart = -num - integerPart;
-      // Round down if decimal part is -0.5 or less, otherwise round up
-      return decimalPart <= -0.5 ? -integerPart - 2 : -integerPart;
-    }
+      if (Math.abs(decimalPart) >= 0.5) {
+        return integerPart + (num >= 0 ? 0 : -1)
+      }
+    return integerPart
   }
   
   function ceil(num) {
