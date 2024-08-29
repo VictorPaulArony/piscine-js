@@ -1,4 +1,4 @@
-// Custom split function to handle multi-character delimiters
+// Custom split function to handle multi-character delimiters and trailing empty strings
 function split(str, sep) {
     const res = [];
     let word = '';
@@ -7,10 +7,8 @@ function split(str, sep) {
     while (i < str.length) {
       // Check if the substring matches the delimiter
       if (str.slice(i, i + sep.length) === sep) {
-        if (word !== '') {
-          res.push(word); // Push the accumulated word to result
-          word = '';
-        }
+        res.push(word); // Push the accumulated word to result
+        word = ''; // Reset word
         i += sep.length; // Skip over the length of the delimiter
       } else {
         word += str[i]; // Accumulate characters
@@ -18,15 +16,13 @@ function split(str, sep) {
       }
     }
   
-    // Push the last accumulated word if not empty
-    if (word !== '') {
-      res.push(word);
-    }
-  
+    // Push the last accumulated word, including trailing empty strings
+    res.push(word);
+    
     return res;
   }
   
-  // Custom join function that remains the same as it correctly handles separators
+  // Custom join function remains the same
   function join(arr, sep) {
     let res = '';
     for (let i = 0; i < arr.length; i++) {
@@ -38,7 +34,7 @@ function split(str, sep) {
     return res;
   }
   
-//   // Test cases
+  // Test cases
 //   console.log(split('hello world', ' ')); // ['hello', 'world']
 //   console.log(join(['hello', 'world'], ' ')); // 'hello world'
 //   console.log(split('hello,world,this,is,a,test', ',')); // ['hello', 'world', 'this', 'is', 'a', 'test']
@@ -46,4 +42,5 @@ function split(str, sep) {
 //   console.log(split('one-two-three', '-')); // ['one', 'two', 'three']
 //   console.log(join(['one', 'two', 'three'], '+')); // 'one+two+three'
 //   console.log(split('ggg - ddd - b', ' - ')); // ['ggg', 'ddd', 'b']
+//   console.log(split('ee,ff,g,', ',')); // ['ee', 'ff', 'g', '']
   
