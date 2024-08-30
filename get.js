@@ -6,6 +6,9 @@ function get(src, path){
     const pathArr = path.split('.')
     let res = src
     for(let i = 0; i < pathArr.length; i++){
+        if (res[pathArr[i]] === undefined){
+            return undefined
+        }
         res = res[pathArr[i]]
     }
     return res 
