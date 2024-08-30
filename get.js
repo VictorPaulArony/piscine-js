@@ -8,7 +8,7 @@ function get(src, path){
     for(let i = 0; i < pathArr.length; i++){
         res = res[pathArr[i]]
     }
-    return res ? res : undefined
+    return res 
 }
 /*
 Split the path string into parts to navigate through the object.
