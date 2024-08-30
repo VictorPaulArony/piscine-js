@@ -1,11 +1,11 @@
 function RNA(str){
     let res = ''
     const RNA = {
-        'C': 'G',
         'G': 'C',
-        'A': 'T',
-        'U': 'A',
-        'T': 'U'
+        'C': 'G',
+        'T': 'A',
+        'A': 'U',
+        'U': 'T'
     }
     for(let i = 0; i < str.length; i++){
         res += RNA[str[i]]
@@ -28,5 +28,5 @@ function DNA(str){
     return res
 }
 
-console.log(RNA('TAGC'))
-console.log(DNA('AUCG'))
+// console.log(RNA('TAGC'))
+// console.log(DNA('AUCG'))
