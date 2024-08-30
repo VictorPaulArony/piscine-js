@@ -1,7 +1,11 @@
-function vowelDots(str){
-    const vowels = /[aeiou]/g
-    var res = str.replace(vowels, '$&.')
-    return res 
+export const tests = [];
+const t = (f) => tests.push(f);
+
+// Define the vowels regular expression
+const vowels = /[aeiou]/i;
+
+function vowelDots(str) {
+    return str.replace(vowels, '$&.');
 }
 
 /*
