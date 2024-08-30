@@ -14,7 +14,7 @@ function pyramid(str, num) {
     let res = ''
 
     for (let i = 0; i < num; i++) {
-        for (let j = 0; j < (num - i - 1) * 2; j++) {
+        for (let j = 0; j < (num - i - 1) * str.length; j++) {
             res += ' '
         }
 
