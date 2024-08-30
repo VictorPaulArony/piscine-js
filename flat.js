@@ -24,7 +24,7 @@ function flat(arr, depth = 1) {
 }
 
 // Example usage
-console.log(flat([1, [2, [3, [4]]]], 2)); // Output: [1, 2, 3, [4]]
-console.log(flat([1, [2, [3, [4]]]])); // Output: [1, 2, 3, [4]]
-console.log(flat([1, 2, [3, 4], [5, [6]]], 1)); // Output: [1, 2, 3, 4, 5, [6]]
-console.log(flat([1, 2, [3, 4], [5, [6]]], 0)); // Output: [1, 2, [3, 4], [5, [6]]]
+// console.log(flat([1, [2, [3, [4]]]], 2)); // Output: [1, 2, 3, [4]]
+// console.log(flat([1, [2, [3, [4]]]])); // Output: [1, 2, 3, [4]]
+// console.log(flat([1, 2, [3, 4], [5, [6]]], 1)); // Output: [1, 2, 3, 4, 5, [6]]
+// console.log(flat([1, 2, [3, 4], [5, [6]]], 0)); // Output: [1, 2, [3, 4], [5, [6]]]
