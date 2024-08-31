@@ -4,7 +4,7 @@ function vowelDots(str) {
     let res = ''
     for (let i = 0; i < str.length; i++) {
         if (vowels.test(str[i])) {
-            res += '.'
+            res +=str[i] + '.'
         } else {
             res += str[i]
         }
