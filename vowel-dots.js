@@ -1,14 +1,15 @@
 
 function vowelDots(str) {
-    const vowels = /[aeiou]/i;
-    let res = '';
+    const vowels = /[aeiou]/gi
+    let res = ''
     for (let i = 0; i < str.length; i++) {
         if (vowels.test(str[i])) {
-            res += '.';
+            res += '.'
         } else {
-            res += str[i];
+            res += str[i]
         }
     }
+    return res
 }
 
 
