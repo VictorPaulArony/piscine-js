@@ -1,9 +1,7 @@
-function isValid(date){
-    if (!date instanceof Date ){
-        return false
-    }
-    return !isNaN(date.getTime()) // if the date is valid
+function isValid(date) {
+    return date instanceof Date && !isNaN(date.getTime());
 }
+
 
 function isAfter(date1, date2){
     if (date1.getTime() > date2.getTime()){
