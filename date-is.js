@@ -27,6 +27,9 @@ function isFuture(date) {
 }
 
 function isPast(date) {
+    if (!isValid(date)) {
+        return false;
+    }
     const d = toDate(date);
     return isValid(d) && d.getTime() < Date.now();
 }
