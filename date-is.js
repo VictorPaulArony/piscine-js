@@ -1,12 +1,11 @@
 function isValid(date) {
-    // Check if the input is a Date object, a valid timestamp, or a valid date string
+    // Check if the input is a Date object or a valid timestamp
     return (date instanceof Date && !isNaN(date.getTime())) || 
-           (typeof date === 'number' && !isNaN(date) && date >= 0) ||
-           (typeof date === 'string' && !isNaN(Date.parse(date)));
+           (typeof date === 'number' && !isNaN(date) && date >= 0);
 }
 
 function toDate(date) {
-    // Convert a timestamp or date string to a Date object
+    // Convert a timestamp to a Date object if it's a number
     return (date instanceof Date) ? date : new Date(date);
 }
 
