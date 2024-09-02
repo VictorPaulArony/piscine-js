@@ -1,5 +1,5 @@
 function addWeek (date){
-    const epoch = new Date(1, 0, 1);
+    const epoch = new Date('0001-01-01T00:00:00Z');
     const diffinTime = date - epoch
     const diffinDays = Math.floor(diffinTime / (1000 * 360 * 24))
 
@@ -12,7 +12,7 @@ function addWeek (date){
     return days[dayofNewWeek]
 }
 
-const date = new Date('2024-09-02T12:00:00')
+const date = new Date('0001-01-02')
 console.log(addWeek(date))
 
 
@@ -22,6 +22,6 @@ function timeTravel({date, hour = 0, minute = 0 , second = 0}) {
     return newDate
 }
 
-const currentDate = new Date('2024-09-02T12:00:00')
-const modifiedDate = timeTravel({date: currentDate,hour: 15, minute: 30, second: 0})
+const currentDate = new Date('2020-05-29 23:25:22')
+const modifiedDate = timeTravel({date: currentDate,hour: 21, minute: 22, second: 22}).toString()
 console.log(modifiedDate)
