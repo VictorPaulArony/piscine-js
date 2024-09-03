@@ -1,15 +1,15 @@
-function dayOfTheYear(date){
-    if (typeof date === 'string'){
-        date = new Date(date)
+function dayOfTheYear(date) {
+    let days = 1;
+    while (!isFirstofFirst(date)) {
+        date.setDate(date.getDate() - 1);
+        days++;
     }
-    
-    let st = new Date(date.getFullYear(),0,1)
+    return days;
+}
 
-    let diff = date- st
-
-    const count = Math.ceil(diff/(1000*60*60*24) + 1)
-    return count
+function isFirstofFirst(date) {
+    return date.getDate() === 1 && date.getMonth() === 0;
 }
 // Example usage:
-console.log(dayOfTheYear(new Date('1664-08-09'))); // Output: 222
+console.log(dayOfTheYear(new Date('0001-01-01'))); // Output: 222
 console.log(dayOfTheYear('2024-03-01')); // Output: 61
