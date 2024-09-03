@@ -1,4 +1,6 @@
-function matchCron(cronParts, date) {
+function matchCron(cronStr, date) {
+    let cronParts = Array.isArray(cronStr) ? cronStr : cronStr.split(' ');
+
     // Check each part of the cron expression
     for (let i = 0; i < cronParts.length; i++) {
         if (i === 0) { // Minute
@@ -32,6 +34,6 @@ function matchCron(cronParts, date) {
 }
 
 // Example usage:
-// console.log(matchCron(['*', '*', '*', '*', '1'], new Date('2020-06-01 00:00:00'))); // true
-// console.log(matchCron(['9', '*', '*', '*', '*'], new Date('2020-05-30 18:09:00'))); // true
-// console.log(matchCron(['9', '*', '*', '*', '*'], new Date('2020-05-30 19:21:00'))); // false
+// console.log(matchCron('* * * * 1', new Date('2020-06-01 00:00:00'))); // true
+// console.log(matchCron('9 * * * *', new Date('2020-05-30 18:09:00'))); // true
+// console.log(matchCron('9 * * * *', new Date('2020-05-30 19:21:00'))); // false
