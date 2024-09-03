@@ -1,15 +1,9 @@
 function firstDayWeek(week, year) {
-    year = year.padStart(4, '0');
-    const date = new Date(Date.UTC(+year, 0, 1));
-    const dayOfWeek = date.getUTCDay() || 7;
+    const firstDayOfYear = new Date(year, 0, 1);
+    const dayOfWeek = firstDayOfYear.getDay() || 7; // Treat Sunday as 7
     const daysToAdd = (week - 1) * 7 - dayOfWeek + 1;
-    const targetDate = new Date(Date.UTC(+year, 0, 1 + daysToAdd));
-
-    const day = targetDate.getUTCDate().toString().padStart(2, '0');
-    const month = (targetDate.getUTCMonth() + 1).toString().padStart(2, '0');
-    const formattedYear = year;
-
-    return `${day}-${month}-${formattedYear}`;
+    const firstDayOfWeek = new Date(Date.UTC(Number(year), 0, 1 + daysToAdd));
+    return firstDayOfWeek.toISOString().slice(0, 10).split('-').reverse().join('-');
 }
 
 // export const tests = []
@@ -22,5 +16,3 @@ function firstDayWeek(week, year) {
 // t(({ eq }) => eq(firstDayWeek(43, '1983'), '17-10-1983'))
 // t(({ eq }) => eq(firstDayWeek(23, '0091'), '04-06-0091'))
 // t(({ eq }) => eq(firstDayWeek(2, '2017'), '02-01-2017'))
-
-// Object.freeze(tests)
