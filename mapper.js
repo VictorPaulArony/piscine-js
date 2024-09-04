@@ -1,8 +1,9 @@
 function map(arr, func){
+    let res = []
     for(let i = 0;i < arr.length;i++){
-        arr[i] = func(arr[i])
+        res.push(func(arr[i],i,arr))
     }
-    return arr;
+    return res
 }
 
 
