@@ -1,11 +1,10 @@
 function format(date, formatStr) {
     const year = date.getFullYear();
-    const isBCE = year < 0;
-    const yearAbs = Math.abs(year).toString();
+    const yearAbs = Math.abs(year).toString().padStart(4, '0'); // Absolute year, padded to 4 digits
 
     const map = {
-        y: yearAbs, // For 'y', just the absolute year as string
-        yyyy: (isBCE ? '-' : '') + yearAbs.padStart(4, '0'), // Handle BCE by adding the negative sign back
+        y: yearAbs, // Absolute year for 'y'
+        yyyy: yearAbs, // For 'yyyy', no negative sign
         M: (date.getMonth() + 1).toString(),
         MM: (date.getMonth() + 1).toString().padStart(2, '0'),
         MMM: date.toLocaleString('default', { month: 'short' }),
