@@ -1,10 +1,10 @@
 function format(date, formatStr) {
     const year = date.getFullYear();
-    const yearAbs = Math.abs(year).toString().padStart(4, '0'); // Absolute year, padded to 4 digits
+    const yearAbs = Math.abs(year).toString();
 
     const map = {
-        y: yearAbs, // Absolute year for 'y'
-        yyyy: yearAbs, // For 'yyyy', no negative sign
+        y: yearAbs, // For 'y', remove leading zeros
+        yyyy: yearAbs.padStart(4, '0'), // For 'yyyy', pad to 4 digits
         M: (date.getMonth() + 1).toString(),
         MM: (date.getMonth() + 1).toString().padStart(2, '0'),
         MMM: date.toLocaleString('default', { month: 'short' }),
