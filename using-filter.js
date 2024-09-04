@@ -8,7 +8,7 @@ function filterStartVowel(str){
 }
 
 function filter5Vowels(str){
-    vol = /[aeiou]/g
+   let  vol = /[aeiou]/g
     return str.filter((el) => (el.match(vol)).length > 5)
 }
 
@@ -36,31 +36,31 @@ function multiFilter(arr) {
 
 
 
-const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
-const arr = [
-    { tag: 'CA', name: 'California', capital: 'Sacramento', region: 'West' },
-    { tag: 'HI', name: 'Hawaii', capital: 'Honolulu', region: 'West' },
-    {
-      tag: 'MO',
-      name: 'Missouri',
-      capital: 'Jefferson City',
-      region: 'Midwest',
-    },
-    {
-      tag: 'PA',
-      name: 'Pennsylvania',
-      capital: 'Harrisburg',
-      region: 'Northeast',
-    },
-    {
-      tag: 'RI',
-      name: 'Rhode Island',
-      capital: 'Providence',
-      region: 'Northeast',
-    },
-  ]
- console.log(filterShortStateName(words))
- console.log(filterStartVowel(words))
- console.log(filter5Vowels(words))
-console.log(filter1DistinctVowel(words))
-console.log(multiFilter(arr))
+// const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+// const arr = [
+//     { tag: 'CA', name: 'California', capital: 'Sacramento', region: 'West' },
+//     { tag: 'HI', name: 'Hawaii', capital: 'Honolulu', region: 'West' },
+//     {
+//       tag: 'MO',
+//       name: 'Missouri',
+//       capital: 'Jefferson City',
+//       region: 'Midwest',
+//     },
+//     {
+//       tag: 'PA',
+//       name: 'Pennsylvania',
+//       capital: 'Harrisburg',
+//       region: 'Northeast',
+//     },
+//     {
+//       tag: 'RI',
+//       name: 'Rhode Island',
+//       capital: 'Providence',
+//       region: 'Northeast',
+//     },
+//   ]
+//  console.log(filterShortStateName(words))
+//  console.log(filterStartVowel(words))
+//  console.log(filter5Vowels(words))
+// console.log(filter1DistinctVowel(words))
+// console.log(multiFilter(arr))
