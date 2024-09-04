@@ -8,8 +8,8 @@ function filterStartVowel(str){
 }
 
 function filter5Vowels(str){
-   let  vol = /[aeiouAEIOU]/gi
-    return str.filter((el) => (el.match(vol)).length > 5)
+   const  vol = /[aeiou]/gi
+    return str.filter((el) => (el.match(vol)).length >= 5)
 }
 
 function filter1DistinctVowel(str){
