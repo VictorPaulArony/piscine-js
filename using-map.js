@@ -1,20 +1,20 @@
 
-// const arr = ([
-//     {
-//       city: 'Los Angeles',
-//       temperature: '  68 °F   ',
-//     },
-//     {
-//       city: 'san francisco',
-//       temperature: ' 59 ° F   ',
-//     },
-//     {
-//         city: 'Pasadena',
-//         temperature: ' 101 °F',
-//         state: 'california',
-//         region: 'West',
-//       },
-// ])
+const arr = ([
+    // {
+    //   city: 'Los Angeles',
+    //   temperature: '  68 °F   ',
+    // },
+    // {
+    //   city: 'san francisco',
+    //   temperature: ' 59 ° F   ',
+    // },
+    {
+        city: 'Pasadena',
+        temperature: ' 101 °F',
+        state: 'california',
+        region: 'West',
+      },
+])
 
 function citiesOnly(arr){
     return arr.map(item => item.city)
@@ -33,11 +33,11 @@ function upperCasingStates(arr){
 }
 
 function fahrenheitToCelsius(arr){
-    return arr.map(item => {
-            let temp = parseFloat(item.temperature)
-            let cel = Math.floor((temp - 32) *5/9)
-            return cel.toString() + '°C'
-    })
+    return arr.map(
+        (item) => 
+        Math.floor((Number(item.slice(0, -2)) - 32) * (5 / 9)).toString() +
+        "°C"
+)
 }
 
 function trimTemp(arr){
@@ -65,6 +65,6 @@ function tempForecasts(arr){
 
 // console.log(citiesOnly(arr))
 // console.log(upperCasingStates(arr))
-// console.log(fahrenheitToCelsius(arr))
+console.log(fahrenheitToCelsius(arr))
 // console.log(trimTemp(arr))
 // console.log(tempForecasts(arr))
