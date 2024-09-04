@@ -33,12 +33,22 @@ function upperCasingStates(arr){
 }
 function fahrenheitToCelsius(arr) {
     return arr.map(item => {
-        let temp = parseFloat(item.temperature.replace(/[^0-9.]/g, ''));
-        let cel = Math.round((temp - 32) * 5 / 9);
-        return cel.toString() + '°C';
+        // Check if item.temperature exists and is a string
+        if (typeof item.temperature === 'string') {
+            // Extract numeric value from the temperature string
+            let temp = parseFloat(item.temperature.replace(/[^0-9.]/g, ''));
+            
+            // Convert Fahrenheit to Celsius
+            let cel = Math.round((temp - 32) * 5 / 9);
+            
+            // Return the Celsius temperature as a string with '°C' suffix
+            return cel.toString() + '°C';
+        } else {
+            // If temperature is not a string, return a default value or handle it appropriately
+            return 'Invalid Temperature';
+        }
     });
 }
-
 function trimTemp(arr){
     return arr.map(item =>{
         let trimed = item.temperature.replace(/\s+/g, '')
