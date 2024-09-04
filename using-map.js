@@ -22,10 +22,14 @@ function citiesOnly(arr){
 
 function upperCasingStates(arr){
     return  arr.map(item => {
-        return  item.city 
+        if (typeof  item.city === 'string') {
+            return item.city
             .split(' ')
             .map(city => city.charAt(0).toUpperCase() + city.slice(1).toLowerCase())
             .join(" ")
+         } else{
+                return ''
+            }
     })
 
 }
@@ -52,7 +56,6 @@ function tempForecasts(arr){
     return arr.map(item =>{
         let tem = parseFloat(item.temperature)
         let cel = Math.floor((tem-32) *5/9)
-        // let upper = item.state.charAt(0).toUpperCase() + item.state.slice(1).toLowerCase()
         let upper = item.state.charAt(0).toUpperCase() + item.state.slice(1).toLowerCase();
 
         return `${cel}°Celsius in  ${item.city}, ${upper}`
