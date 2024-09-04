@@ -21,16 +21,14 @@ function citiesOnly(arr){
 }
 
 function upperCasingStates(arr){
-    return  arr.map(item => {
-        if (typeof  item.city === 'string') {
-            return item.city
-            .split(' ')
-            .map(city => city.charAt(0).toUpperCase() + city.slice(1).toLowerCase())
-            .join(" ")
-         } else{
-                return ''
-            }
-    })
+    return arr.map((item) =>
+    item
+        .split(" ")
+        .map((word) => {
+            return word[0].toUpperCase() + word.slice(1);
+        })
+        .join(" ")
+);
 
 }
 
