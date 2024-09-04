@@ -1,29 +1,27 @@
 function format(date, formatStr) {
     const map = {
-        'y': () => date.getFullYear().toString().slice(-2),
-        'yyyy': () => date.getFullYear(),
-        'G': () => date.getFullYear() > 0 ? 'AD' : 'BC',
-        'GGGG': () => date.getFullYear() > 0 ? 'Anno Domini' : 'Before Christ',
-        'M': () => date.getMonth() + 1,
-        'MM': () => String(date.getMonth() + 1).padStart(2, '0'),
-        'MMM': () => date.toLocaleString('default', { month: 'short' }),
-        'MMMM': () => date.toLocaleString('default', { month: 'long' }),
-        'd': () => date.getDate(),
-        'dd': () => String(date.getDate()).padStart(2, '0'),
-        'E': () => date.toLocaleString('default', { weekday: 'short' }),
-        'EEEE': () => date.toLocaleString('default', { weekday: 'long' }),
-        'h': () => date.getHours() % 12 || 12,
-        'hh': () => String(date.getHours() % 12 || 12).padStart(2, '0'),
-        'H': () => date.getHours(),
-        'HH': () => String(date.getHours()).padStart(2, '0'),
-        'm': () => date.getMinutes(),
-        'mm': () => String(date.getMinutes()).padStart(2, '0'),
-        's': () => date.getSeconds(),
-        'ss': () => String(date.getSeconds()).padStart(2, '0'),
-        'a': () => date.getHours() < 12 ? 'AM' : 'PM'
+        y: date.getFullYear().toString(),
+        yyyy: date.getFullYear().toString().padStart(4, '0'),
+        M: (date.getMonth() + 1).toString(),
+        MM: (date.getMonth() + 1).toString().padStart(2, '0'),
+        MMM: date.toLocaleString('default', { month: 'short' }),
+        MMMM: date.toLocaleString('default', { month: 'long' }),
+        d: date.getDate().toString(),
+        dd: date.getDate().toString().padStart(2, '0'),
+        H: date.getHours().toString(),
+        HH: date.getHours().toString().padStart(2, '0'),
+        h: (date.getHours() % 12 || 12).toString(),
+        hh: (date.getHours() % 12 || 12).toString().padStart(2, '0'),
+        m: date.getMinutes().toString(),
+        mm: date.getMinutes().toString().padStart(2, '0'),
+        s: date.getSeconds().toString(),
+        ss: date.getSeconds().toString().padStart(2, '0'),
+        E: date.toLocaleString('default', { weekday: 'short' }),
+        EEEE: date.toLocaleString('default', { weekday: 'long' }),
+        a: date.getHours() < 12 ? 'AM' : 'PM',
     };
 
-    return formatStr.replace(/\byyyy|y|GGGG|G|MMMM|MMM|MM|M|dd|d|EEEE|E|hh|h|HH|H|mm|m|ss|s|a\b/g, (match) => map[match]());
+    return formatStr.replace(/y{1,4}|M{1,4}|d{1,2}|E{1,4}|H{1,2}|h{1,2}|m{1,2}|s{1,2}|a/g, match => map[match]);
 }
 
 // Example usage:
