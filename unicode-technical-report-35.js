@@ -1,7 +1,11 @@
 function format(date, formatStr) {
+    const year = date.getFullYear();
+    const isBCE = year < 0;
+    const yearAbs = Math.abs(year).toString();
+
     const map = {
-        y: date.getFullYear().toString(),
-        yyyy: date.getFullYear().toString().padStart(4, '0'),
+        y: yearAbs, // For 'y', just the absolute year as string
+        yyyy: (isBCE ? '-' : '') + yearAbs.padStart(4, '0'), // Handle BCE by adding the negative sign back
         M: (date.getMonth() + 1).toString(),
         MM: (date.getMonth() + 1).toString().padStart(2, '0'),
         MMM: date.toLocaleString('default', { month: 'short' }),
@@ -25,8 +29,8 @@ function format(date, formatStr) {
 }
 
 // Example usage:
-const d = new Date('7 January 1985, 03:08:19');
-console.log(format(d, 'HH(mm)ss [dd] <MMM>')); // -> '03(08)19 [07] <Jan>'
+// const d = new Date('7 January 1985, 03:08:19');
+// console.log(format(d, 'HH(mm)ss [dd] <MMM>')); // -> '03(08)19 [07] <Jan>'
  /*
  Explanation:
 Mapping Date Components:
