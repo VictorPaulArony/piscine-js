@@ -3,8 +3,8 @@ function every(arr, func){
         if (!func(arr[i])){
             return false
         }
-        return true
     }
+    return true
 }
 
 
@@ -13,8 +13,8 @@ function some(arr, func){
         if (func(arr[i])){
             return true
         }
-        return false
     }
+    return false
 }
 
 function none(arr, func){
@@ -22,6 +22,6 @@ function none(arr, func){
         if (!func(arr[i]) && func(arr[i])){
             return true
         }
-        return false
     }
+    return false
 }
