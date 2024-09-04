@@ -8,7 +8,7 @@ function filterStartVowel(str){
 }
 
 function filter5Vowels(str){
-   let  vol = /[aeiou]/g
+   let  vol = /[aeiouAEIOU]/g
     return str.filter((el) => (el.match(vol)).length > 5)
 }
 
