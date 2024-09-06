@@ -1,5 +1,5 @@
 export function getArchitects(){
-    const people = document.querySelectorAll("a")
+    const people = document.querySelectorAll("*")
     const arts =[]
     const nonart = []
      people.forearch(person => {
