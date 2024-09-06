@@ -1,15 +1,8 @@
 export function getArchitects(){
-    const people = document.querySelectorAll("*")
-    const arts =[]
-    const nonart = []
-     people.forearch(person => {
-        if (person.tag === 'a'){
-            arts.push(person)
-        } else {
-            nonart.push(person)
-        }
-     } )
-     return [arts, nonart]
+    return [
+        document.querySelectorAll("body a"),
+        document.querySelectorAll("body span"),
+    ];
 }
 
 export function getClassical(){
