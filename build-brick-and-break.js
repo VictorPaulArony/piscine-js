@@ -1,38 +1,31 @@
-export function build(n) {
-    let body = document.body;
+function build(n) {
+    let body = document.getElementsByTagName("body")[0];
     let bricks = 1;
-    let inter = setInterval(() => {
-        if (bricks > n) {
-            clearInterval(inter);
-            return;
-        }
-
-        let brk = document.createElement("div");
-        brk.setAttribute("id", "brick-" + bricks);
-        if (bricks % 3 === 2) {
-            brk.dataset.foundation = true;
-        }
-        body.appendChild(brk);
+    let interval = setInterval(() => {
+        let brick = document.createElement("div");
+        brick.setAttribute("id", "brick-" + bricks);
+        bricks % 3 === 2 ? (brick.dataset.foundation = true) : null;
+        body.appendChild(brick);
         bricks++;
+        if (bricks > n) {
+            clearInterval(interval);
+        }
     }, 100);
 }
 
-export function destroy(ids) {
-    Object.values(ids).forEach((id) => {
+function repair(...ids) {
+    ids.forEach((id) => {
         let brick = document.getElementById(id);
-        if (brick) {
-            if (brick.dataset.foundation) {
-                brick.dataset.repaired = "in progress";
-            } else {
-                brick.dataset.repaired = "true";
-            }
-        }
+        brick.getAttribute("foundation")
+            ? (brick.dataset.repaired = "in progress")
+            : (brick.dataset.repaired = true);
     });
 }
 
-export function destroyOne() {
-    let bricks = document.querySelectorAll('div');
-    if (bricks.length > 0) {
-        bricks[bricks.length - 1].remove();
-    }
+function destroy() {
+    let bricks = document.getElementsByTagName("div");
+    bricks[bricks.length - 1].remove();
 }
+
+export { build, repair, destroy };
+
