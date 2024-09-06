@@ -4,9 +4,9 @@ export function getArchitects(){
     const nonart = []
      people.forearch(person => {
         if (person.tag === 'a'){
-            arts.push(person.id)
+            arts.push(person)
         } else {
-            nonart.push(person.id)
+            nonart.push(person)
         }
      } )
      return [arts, nonart]
