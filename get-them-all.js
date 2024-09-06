@@ -1,14 +1,14 @@
 export function getArchitects(){
-    return [
-        document.querySelectorAll("body a"),
-        document.querySelectorAll("body span"),
-    ];
+    const architects = Array.from(document.querySelectorAll("body a"));
+    const nonArchitects = Array.from(document.querySelectorAll("body span"));
+    return [architects, nonArchitects]
+
 }
 
 export function getClassical(){
-    const [arts, _] = getArchitects()
-    const classical = arts.filter(person => person.classe === 'classical')
-    const nonclassical = arts.filter(person => person.classe !== 'classical')
+    const [architects, _] = getArchitects()
+    const classical = architects.filter(person => person.classe === 'classical')
+    const nonclassical = architects.filter(person => person.classe !== 'classical')
     return [classical, nonclassical]
 }
 
