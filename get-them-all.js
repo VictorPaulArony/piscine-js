@@ -21,7 +21,7 @@ export function getActive(){
 
 export function getBonannoPisano(){
     const [active, _] = getActive()
-   const bon = document.getElementById("bonanno-pisano")
+   const bon = document.getElementById("BonannoPisano")
    const nonbon = active.filter(architect => !architect.id !== "BonannoPisano" )
     return [bon, nonbon]
 }
