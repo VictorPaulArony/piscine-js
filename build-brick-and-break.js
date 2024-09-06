@@ -2,16 +2,18 @@ export function build(){
     let body = document.getElementById("body")[0]
     let bricks = 1
     let inter = setInterval(() => {
+        if (bricks > n){
+            clearInterval(inter)
+            return
+        }
+        bricks++
         let brk = document.createElement("div")
         brk.setAttribute("id", "brick-" + bricks)
         if (bricks%3 === 2){_
-        brk.dataset.foundation = "true"
+        brk.dataset.foundation = true
         }
         body.appendChild(brk)
-        bricks++
-        if (bricks > n){
-            clearInterval(inter)
-        }
+       
     }, 100)
 }
 export function destroy(...ids){
