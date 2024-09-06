@@ -21,7 +21,7 @@ export function getActive(){
 
 export function getBonannoPisano(){
     const [active, _] = getActive()
-   const bon = active.filter(architect => architect.classList.contains("bonanno-pisano"))
+   const bon = active.filter(architect => architect.classList.contains('BonannoPisano'))
    const nonbon = active.filter(architect => !architect)
     return [bon, nonbon]
 }
