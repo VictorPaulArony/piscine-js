@@ -6,23 +6,20 @@ export function getArchitects(){
 }
 
 export function getClassical(){
-    const [architects, _] = getArchitects()
-    const classical = architects.filter(person => person.classe === 'classical')
-    const nonclassical = architects.filter(person => person.classe !== 'classical')
+   const classical = Array.from(document.querySelectorAll("a.classical"))
+   const nonclassical = Array.from(document.querySelectorAll("a:not(.classical"))
     return [classical, nonclassical]
 }
 
 export function getActive(){
-    const [classical, _] = getClassical()
-    const active = classical.filter(person => person.active === true)
-    const inactive = classical.filter(person => person.active === false)
+    const active = Array.from(document.querySelectorAll("a.classical.active"))
+    const inactive = Array.from(document.querySelectorAll.querySelectorAll("a.classical:not(.active"))
     return [active, inactive]
 }
 
 export function getBonannoPisano(){
-    const [active, _] = getActive()
-    const bon = active.filter(person => person.id === 'BonannoPisano')
-    const nonbon = active.filter(person => person.id !== 'BonannoPisano')
+   const bon = Array.from(document.querySelectorAll("a.classical.active.bonanno-pisano"))
+   const nonbon = Array.from(document.querySelectorAll("a.classical.active:not(.bonanno-pisano"))
     return [bon, nonbon]
 }
 
