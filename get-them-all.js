@@ -30,5 +30,6 @@ export function getBonannoPisano(){
     const [active, _] = getActive()
     const bon = active.filter(person => person.id === 'BonannoPisano')
     const nonbon = active.filter(person => person.id !== 'BonannoPisano')
+    return [bon, nonbon]
 }
 
