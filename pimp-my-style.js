@@ -6,14 +6,17 @@ export function pimp(){
     if (count < styles.length){
         button.classList.add(styles[count])
         count++
-        button.classList.remove("unpimp")
     }else {
         count--
         button.classList.remove(styles[count])
-        button.classList.add("unpimp")
+        button.classList.toggle("unpimp")
+        if(count === 0){
+            button.classList.toggle("unpimp")
+        }
         
     }
-    if(count === 0){
-        button.classList.remove("unpimp")
+    if (count === styles[count]){
+        button.classList.toggle("unpimp")
     }
+    
 }
