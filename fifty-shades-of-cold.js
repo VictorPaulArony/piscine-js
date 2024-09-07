@@ -1,35 +1,35 @@
-import { colors } from "./fifty-shades-of-cold.data.js"
+import { colors } from "./fifty-shades-of-cold.data.js";
 
-export function generateClasses(){
-    const styler = document.createElement("style")
-    document.head.appendChild(styler)
+function generateClasses() {
+    const head = document.getElementsByTagName("head")[0];
+    const style = document.createElement("style");
+    head.appendChild(style); // Append the style element to the head
 
-    const stylesheet = styler.sheet
-
-    colors.forEach(color => {
-        stylesheet.insertRule(` .${color} {background: ${color}}`, stylesheet.cssRules.length)
-    })
-
-}
-
-export function generateColdShades(){
-    const div = document.createElement("div")
-    const coldColors = colors.filter(color => {
-        /aqua|blue|turquoise|green|cyan|navy|purple/.test(color)
-    })
-    coldColors.forEach(color => {
-        div.className = color
-        div.textContent = color
-        div.onclick = () => choseShade(color)
-        document.body.appendChild(div)
-    })
-
-}
-
-export function choseShade(){
-    const divs = document.querySelectorAll("div");
-
-    divs.forEach(div => {
-    div.className = choseShade
+    colors.forEach((color) => {
+        style.sheet.insertRule(`.${color} { background: ${color}; color: white; padding: 20px; margin: 10px; text-align: center; cursor: pointer; }`, style.sheet.cssRules.length);
     });
 }
+
+function generateColdShades() {
+    const body = document.getElementsByTagName("body")[0];
+    colors.forEach((color) => {
+        if (color.match(/(aqua|blue|turquoise|green|cyan|navy|purple)/)) {
+            const div = document.createElement("div");
+            div.classList.add(color);
+            div.innerHTML = color;
+            div.addEventListener('click', () => chooseShade(color)); // Add click event listener
+            body.appendChild(div);
+        }
+    });
+}
+
+function chooseShade(shade) {
+    document.querySelectorAll("div").forEach((div) => {
+        if (!div.classList.contains(shade)) { // Only change classes for divs that are not the clicked one
+            div.className = shade; // Change the class to the chosen shade
+        }
+    });
+}
+
+// Export the functions
+export { generateClasses, generateColdShades, chooseShade };
