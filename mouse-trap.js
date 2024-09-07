@@ -1,12 +1,7 @@
-/**
- * Creates an instance of a circle
- * 
- * @param {number} x - The x-coordinate of the circle
- * @param {number} y - The y-coordinate of the circle
- * @example
- * const circle = new Circle(100, 200);
- */
+var circles = [];
+var box;
 class Circle {
+    // Creates an instance of a circle
     constructor(x, y) {
         this.x = x;
         this.y = y;
@@ -16,13 +11,7 @@ class Circle {
         this.draw();
         circles.push(this);
     }
-
-    /**
-     * "Draws" the circle by creating a div and appending it to the body
-     * 
-     * @example
-     * circle.draw();
-     */
+    // "Draws" the circle by creating a div and appending it to the body
     draw() {
         this.HTML = document.createElement("div");
         this.HTML.classList.add("circle");
@@ -33,15 +22,7 @@ class Circle {
         this.trapped();
         document.body.appendChild(this.HTML);
     }
-
-    /**
-     * Moves the circle to the given x and y coordinates
-     * 
-     * @param {number} x - The new x-coordinate of the circle
-     * @param {number} y - The new y-coordinate of the circle
-     * @example
-     * circle.move(150, 250);
-     */
+    // Moves the circle to the given x and y coordinates
     move(x, y) {
         this.trapped();
         if (!this.isTrapped) {
@@ -66,13 +47,7 @@ class Circle {
             }
         }
     }
-
-    /**
-     * Checks if the circle is inside the box
-     * 
-     * @example
-     * circle.trapped();
-     */
+    // Checks if the circle is inside the box
     trapped() {
         if (
             this.x > box.x &&
@@ -87,16 +62,7 @@ class Circle {
             this.HTML.style.background = "white";
         }
     }
-
-    /**
-     * Checks if the given x and y coordinates for the circle are inside the box
-     * 
-     * @param {number} x - The x-coordinate to check
-     * @param {number} y - The y-coordinate to check
-     * @returns {boolean} Whether the coordinates are inside the box
-     * @example
-     * circle.inReactangle(150, 250);
-     */
+    // Checks if the given x and y coordinates for the circle are inside the box
     inReactangle(x, y) {
         if (
             x > box.x &&
@@ -111,12 +77,6 @@ class Circle {
     }
 }
 
-/**
- * Creates an instance of a box
- * 
- * @example
- * const box = new Box();
- */
 class Box {
     constructor() {
         this.HTML = document.createElement("div");
@@ -133,13 +93,26 @@ class Box {
     }
 }
 
-/**
- * Creates a new circle when the user clicks on the body
- * 
- * @param {MouseEvent} e - The mouse event
- * @example
- * document.body.addEventListener("click", createCircle);
- */
+document.body.addEventListener("click", (e) => {
+    createCircle(e);
+});
+
+document.body.addEventListener("mousemove", (e) => {
+    moveCircle(e);
+});
+
 function createCircle(e) {
     if (e === undefined) return;
-    new Circle(e.clientX - 25, e.clientY - 25
+    new Circle(e.clientX - 25, e.clientY - 25);
+}
+
+function moveCircle(e) {
+    if (e === undefined || circles.length === 0) return;
+    circles[circles.length - 1].move(e.clientX - 25, e.clientY - 25);
+}
+
+function setBox() {
+    box = new Box();
+}
+
+export { createCircle, moveCircle, setBox };
