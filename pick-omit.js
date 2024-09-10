@@ -1,7 +1,15 @@
-function pick(obj, arr){
-    const match = _.pickBy(obj, (value, key) => 
-    _.some(arr, str => _.includes(key, str)))
-    return match
+function pick(obj, keys){
+    if (typeof keys === 'string') {
+        keys = [keys];
+    }
+
+    const result = {};
+    for (const key in obj) {
+        if (keys.hasOwnProperty(key)) {
+            result[key] = obj[key];
+        }
+    }
+    return result;
 }
 
 function omit(obj, keys) {
@@ -12,7 +20,7 @@ function omit(obj, keys) {
 
     const result = {};
     for (const key in obj) {
-        if (!keys.includes(key)) {
+        if (!keys.hasOwnProperty(key)) {
             result[key] = obj[key];
         }
     }
