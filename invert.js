@@ -1,8 +1,8 @@
 function invert(obj){
     let rev = {}
-    for (let key in obj){
-        rev[obj[key]] = key
-    }
+   Object.keys(obj).forEach(key => {
+    rev[obj[key]] = key
+   })
     
     return rev
 }
