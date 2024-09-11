@@ -19,11 +19,16 @@ function mapKeys(obj, call) {
     return res;
 }
 
-function reduceKeys(obj, call, initial) {
-    for (let key of Object.keys(obj)) {
-        initial = call(initial, key);
+function reduceKeys(obj, callback, initialValue) {
+    let undef = false;
+    if (initialValue === undefined) {
+        initialValue = "";
+        undef = true;
     }
-    return initial;
+    let res = Object.keys(obj).reduce((acc, curr) => {
+        return callback(acc, curr, initialValue);
+    }, initialValue);
+    return res;
 }
 
 function concat(n, m) {
@@ -39,4 +44,4 @@ function concat(n, m) {
 // // output: { -carbohydrates: 12, -protein: 20, -fat: 5 }
 
 // console.log(reduceKeys(nutrients, (acc, cr) => acc ? acc.concat(', ', cr) : cr, ''));
-// // output: carbohydrates, protein, fat
+// output: carbohydrates, protein, fat
