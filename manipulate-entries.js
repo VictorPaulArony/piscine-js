@@ -1,8 +1,8 @@
 function filteerEntries(obj, call){
     let res = {}
-    for(let key in obj){
-        if(call[key, obj[value]])
-        res[key] = obj[key]
+    for(let [key, value] of Object.entries(obj)){
+        if(call[key, value])
+        res[key] = value
 
 
     }
