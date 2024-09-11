@@ -106,6 +106,9 @@ function mapAverage(obj) {
 }
   */
   
+
+
+/*
   // Test data
   const personnel = {
     luke: { isForceUser: true, shootingScore: 90, pilotingScore: 95 },
@@ -122,4 +125,4 @@ function mapAverage(obj) {
   console.log(reduceScore(personnel)); // 358
   console.log(filterForce(personnel)); // { luke: { isForceUser: true, shootingScore: 90, pilotingScore: 95 }, leia: { isForceUser: true, shootingScore: 85, pilotingScore: 88 } }
   console.log(mapAverage(personnel)); // { luke: { isForceUser: true, shootingScore: 90, pilotingScore: 95, averageScore: 92.5 }, han: { isForceUser: false, shootingScore: 85, pilotingScore: 80, averageScore: 82.5 }, leia: { isForceUser: true, shootingScore: 85, pilotingScore: 88, averageScore: 86.5 }, chewbacca: { isForceUser: false, shootingScore: 78, pilotingScore: 70, averageScore: 74 } }
-  
+  */
