@@ -21,7 +21,7 @@ function mapValues(obj, call){
 
 
 function reduceValues(obj, call, initial){
-    let res = 0
+    let res = initial
     // for (let key in obj){
     //     if (obj.hasOwnProperty(key)){
     //         res += obj[key]
@@ -66,3 +66,5 @@ function main(obj, call){
   
 //   console.log(reduceValues(nutrients, (acc, cr) => acc + cr.calories, 0));
 //   // Expected output: 953
+
+// console.log(reduceValues({ a: 1, b: 2, c: 3 }, (acc, cr) => acc + cr, 3));
