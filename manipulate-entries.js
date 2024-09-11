@@ -4,7 +4,9 @@ function filteerEntries(obj, call){
         if(obj.hasOwnProperty(key) && call(key))
         res[key] = obj[key]
 
+
     }
+    return res
 }
 
 function mapEntries(obj, call , value){
