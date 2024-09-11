@@ -1,7 +1,7 @@
 function filteerEntries(obj, call){
     let res = {}
     for(let key in obj){
-        if(obj.hasOwnProperty(key) && call(key))
+        if(call[key, obj[value]])
         res[key] = obj[key]
 
 
