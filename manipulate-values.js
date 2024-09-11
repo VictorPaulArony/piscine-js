@@ -21,16 +21,23 @@ function mapValues(obj, call){
 
 
 function reduceValues(obj, call, initial){
-    let res = initial
+    // let res = initial
     // for (let key in obj){
     //     if (obj.hasOwnProperty(key)){
     //         res += obj[key]
     //     }
     // }
-    for(let [key, value] of Object.entries(obj)){
-        res = call(res, value)
+    // for(let [key, value] of Object.entries(obj)){
+    //     res = call(res, value)
+    // }
+    // return res
+    if (initial === undefined) {
+        initial = 0;
     }
-    return res
+    for (let key in obj) {
+        initial= call(initial, obj[key]);
+    }
+    return initial
 
 }
 function main(obj, call){
@@ -64,7 +71,7 @@ function main(obj, call){
 //   console.log(mapValues(nutrients, (v) => ({ ...v, calories: v.calories + 1 })));
 //   // Expected output: { tomato: { calories: 19, ... }, vinegar: { calories: 21, ... }, ... }
   
-//   console.log(reduceValues(nutrients, (acc, cr) => acc + cr.calories, 0));
+//   console.log(reduceValues(nutrients, (acc, cr) => initial+ cr.calories, 0));
 //   // Expected output: 953
 
-// console.log(reduceValues({ a: 1, b: 2, c: 3 }, (acc, cr) => acc + cr, 3));
+console.log(reduceValues({ a: 1, b: 2, c: 3 }, (acc, cr) => initial + cr, 3));
