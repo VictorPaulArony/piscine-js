@@ -74,4 +74,4 @@ function main(obj, call){
 //   console.log(reduceValues(nutrients, (acc, cr) => initial+ cr.calories, 0));
 //   // Expected output: 953
 
-console.log(reduceValues({ a: 1, b: 2, c: 3 }, (acc, cr) => initial + cr, 3));
+// console.log(reduceValues({ a: 1, b: 2, c: 3 }, (acc, cr) => initial + cr, 3));
