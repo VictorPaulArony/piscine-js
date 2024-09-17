@@ -31,23 +31,25 @@ function trunc(num){
 }
 
 function finder(num){
-    let sign = num >= 0 ? 1 : -1 
-    let res = 0
-    let i = 0
-    let numStr = Math.abs(num) + ''
-    while (numStr.length > i){
-        if (num[i] !== '.'){
-            res = res *10 + (numStr[i] - '0')
-            break
-        }
+    let sign = num >= 0 ? 1 : -1
+    num = Math.abs(num)
+    var res = 0
+    var pla = 1
+    while(pla <= num){
+        pla *= 10
     }
-    // console.log(res * sign )
+    pla /= 10
+    while(pla >= 1){
+       while(res + pla <= num){
+        res += pla
+       }
+       pla /= 10
+    }
     return res * sign
-    
 }
 
-// const nums = [3.7, -3.7, 3.1, -3.1]
-// console.log(nums.map(round))//[ 4, -4, 3, -3 ]
-// console.log(nums.map(ceil))//[ 4, -3, 4, -3 ]
-// console.log(nums.map(floor))//[ 3, -4, 3, -4 ]
-// console.log(nums.map(trunc))//[ 3, -3, 3, -3 ]
+const nums = [3.7, -3.7, 3.1, 0]
+console.log(nums.map(round))//[ 4, -4, 3, -3 ]
+console.log(nums.map(ceil))//[ 4, -3, 4, -3 ]
+console.log(nums.map(floor))//[ 3, -4, 3, -4 ]
+console.log(nums.map(trunc))//[ 3, -3, 3, -3 ]
