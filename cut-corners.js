@@ -34,7 +34,7 @@ function finder(num){
   let sign = num >= 0 ? 1 : -1 
   let res = 0
   let i = 0
-  let numStr = Math.abs(num) + ''
+  let numStr = Math.abs(num) + ""
   while (numStr.length > i){
       if (num[i] !== '.'){
           res = res *10 + (numStr[i] - '0')
