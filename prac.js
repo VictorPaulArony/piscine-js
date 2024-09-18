@@ -1,19 +1,13 @@
-function tri(str, num){
-    let res = ''
-   
-    for (let i = 0; i < num; i++) {
-        for (let j = 0; j <= (num -i-1) ; j++) {
-            res += ' '
-        }
+let n = 5;
 
-        for (let k = 0; k < i *2 +1 ; k++) {
-            res += str
-        }
-        if (i !== num - 1) {
-            res += '\n'
-        }
-    }
-
-    return res
+for (let i = 1; i <= n; i++) {
+  // printing spaces
+  for (let j = 0; j < n - i; j++) {
+    process.stdout.write(' ');
+  }
+  // printing star
+  for (let k = 0; k < i*2-1 ; k++) {
+    process.stdout.write('#');
+  }
+  console.log();
 }
-console.log(tri("#", 5))
