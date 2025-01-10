@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie Tracker Filters</title>
+    <style>
+        .filter-container {
+            margin-bottom: 20px;
+        }
+
+        .slider {
+            width: 50%;
+        }
+
+        .slider-value {
+            margin-top: 5px;
+        }
+
+        .nested-checkbox {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="filter-container">
+        <!-- Filter by Creation Date Range -->
+        <label for="creation-date-range">Creation Date Range:</label><br>
+        <input type="range" id="creation-range" class="slider" min="2000" max="2025" step="1" value="2000">
+        <div id="creation-range-value" class="slider-value">From: 2000 to: 2025</div>
+    </div>
+
+    <div class="filter-container">
+        <!-- Filter by First Album Date Range -->
+        <label for="album-date-range">First Album Date Range:</label><br>
+        <input type="range" id="album-range" class="slider" min="2000" max="2025" step="1" value="2000">
+        <div id="album-range-value" class="slider-value">From: 2000 to: 2025</div>
+    </div>
+
+    <!-- Filter by Number of Members -->
+    <div class="filter-container">
+        <label for="members-range">Number of Members:</label><br>
+        <div class="nested-checkbox">
+            <input type="checkbox" class="members-checkbox" value="1"> 1
+            <input type="checkbox" class="members-checkbox" value="2"> 2
+            <input type="checkbox" class="members-checkbox" value="3"> 3
+            <input type="checkbox" class="members-checkbox" value="4"> 4
+            <input type="checkbox" class="members-checkbox" value="5"> 5
+            <input type="checkbox" class="members-checkbox" value="6"> 6
+            <input type="checkbox" class="members-checkbox" value="7"> 7
+            <input type="checkbox" class="members-checkbox" value="8"> 8
+            <input type="checkbox" class="members-checkbox" value="9"> 9
+            <input type="checkbox" class="members-checkbox" value="10"> 10
+        </div>
+    </div>
+
+    <!-- Filter by Locations (States and Cities) -->
+    <div class="filter-container">
+        <label for="states">States:</label><br>
+        <select id="states">
+            <option value="">Select State</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+        </select>
+    </div>
+
+    <div class="filter-container">
+        <label for="cities">Cities:</label><br>
+        <select id="cities">
+            <option value="">Select City</option>
+        </select>
+    </div>
+
+    <!-- Display the filtered results -->
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
